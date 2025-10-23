@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luke’s Guide Services | Southeast Texas Bass Fishing Trips</title>
+    <meta name="description" content="Experience the best bass fishing in Southeast Texas with Luke’s Guide Services. Family-friendly Texas fishing trips led by a local bass fishing guide—book your adventure today!">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --navy: #0D1B2A;
+            --green: #2E5339;
+            --tan: #D9CBBE;
+            --white: #ffffff;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            color: var(--navy);
+            background-color: var(--tan);
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: rgba(13, 27, 42, 0.85);
+            color: var(--white);
+            padding: 1rem 5vw;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        header .logo img {
+            height: 48px;
+            width: auto;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 1.5rem;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 600;
+            letter-spacing: 0.03em;
+        }
+
+        nav a:hover,
+        nav a:focus-visible {
+            color: var(--tan);
+            outline: none;
+        }
+
+        nav a:focus-visible {
+            box-shadow: 0 0 0 3px rgba(217, 203, 190, 0.6);
+            border-radius: 6px;
+        }
+
+        .hero {
+            position: relative;
+            background: linear-gradient(rgba(13, 27, 42, 0.6), rgba(46, 83, 57, 0.65)),
+                        url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80') center/cover;
+            color: var(--white);
+            text-align: center;
+            padding: 8rem 5vw;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            max-width: 620px;
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .btn-primary {
+            background-color: var(--green);
+            color: var(--white);
+            padding: 0.85rem 2.5rem;
+            border-radius: 999px;
+            border: none;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .btn-primary:hover,
+        .btn-primary:focus-visible {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            outline: none;
+        }
+
+        .btn-primary:focus-visible {
+            box-shadow: 0 0 0 4px rgba(46, 83, 57, 0.35);
+        }
+
+        section {
+            padding: 4.5rem 5vw;
+        }
+
+        .section-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: clamp(2rem, 4vw, 2.75rem);
+            margin-bottom: 1.5rem;
+            color: var(--navy);
+            text-align: center;
+        }
+
+        .section-intro {
+            max-width: 720px;
+            margin: 0 auto 3rem auto;
+            text-align: center;
+            color: rgba(13, 27, 42, 0.85);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            align-items: center;
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 18px;
+            box-shadow: 0 20px 45px rgba(13, 27, 42, 0.1);
+        }
+
+        .about-content img {
+            width: 100%;
+            border-radius: 16px;
+            object-fit: cover;
+            height: 100%;
+            max-height: 420px;
+        }
+
+        .rates-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 2rem;
+        }
+
+        .rate-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 16px 35px rgba(13, 27, 42, 0.12);
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .rate-card h3 {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            color: var(--green);
+        }
+
+        .rate-card p {
+            margin: 0;
+        }
+
+        .included {
+            margin-top: auto;
+            font-size: 0.95rem;
+            color: rgba(13, 27, 42, 0.75);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 18px;
+            box-shadow: 0 18px 40px rgba(13, 27, 42, 0.15);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 1rem;
+            background: linear-gradient(transparent, rgba(13, 27, 42, 0.8));
+            color: var(--white);
+            font-weight: 600;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-caption {
+            opacity: 1;
+        }
+
+        .testimonials {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .testimonial {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 12px 30px rgba(13, 27, 42, 0.1);
+            position: relative;
+        }
+
+        .testimonial::before {
+            content: "\201C";
+            font-size: 3rem;
+            color: var(--green);
+            position: absolute;
+            top: -10px;
+            left: 20px;
+        }
+
+        .testimonial cite {
+            display: block;
+            margin-top: 1rem;
+            font-style: normal;
+            font-weight: 600;
+            color: var(--green);
+        }
+
+        .booking-form {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 18px;
+            box-shadow: 0 20px 45px rgba(13, 27, 42, 0.12);
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        .booking-form form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .booking-form label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            font-family: 'Montserrat', sans-serif;
+            color: var(--green);
+        }
+
+        .booking-form input,
+        .booking-form select,
+        .booking-form textarea {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border-radius: 12px;
+            border: 1px solid rgba(13, 27, 42, 0.2);
+            font-size: 1rem;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .booking-form input:focus-visible,
+        .booking-form select:focus-visible,
+        .booking-form textarea:focus-visible {
+            border-color: var(--green);
+            box-shadow: 0 0 0 3px rgba(46, 83, 57, 0.2);
+            outline: none;
+        }
+
+        .booking-form button {
+            grid-column: span 2;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .contact-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 16px 35px rgba(13, 27, 42, 0.1);
+        }
+
+        footer {
+            background: var(--navy);
+            color: var(--white);
+            text-align: center;
+            padding: 2rem 5vw;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        footer .logo img {
+            height: 40px;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero {
+                padding: 6rem 8vw;
+            }
+
+            .booking-form form {
+                grid-template-columns: 1fr;
+            }
+
+            .booking-form button {
+                grid-column: span 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="assets/images/lukes-guide-logo.svg" alt="Luke's Guide Services silhouette logo">
+            <div>
+                <strong>Luke’s Guide Services</strong><br>
+                <small>Texas Bass Fishing Adventures</small>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#rates">Rates &amp; Trips</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#book">Book Now</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <h1>Hook Into Trophy Bass with Luke</h1>
+            <p>Friendly, local bass fishing trips in Southeast Texas led by guide Luke Thompson. From first casts to seasoned anglers, we help you land big largemouth bass and make memories that last a lifetime.</p>
+            <button class="btn-primary" onclick="document.getElementById('book').scrollIntoView({behavior: 'smooth'});">Book Your Trip</button>
+        </section>
+
+        <section id="about">
+            <h2 class="section-title">About Luke’s Guide Services</h2>
+            <p class="section-intro">Raised on the waters of Southeast Texas, Luke turned childhood passion into a profession—guiding families, friends, and first-timers to unforgettable days on the lake.</p>
+            <div class="about-content">
+                <img src="https://images.unsplash.com/photo-1526336024174-e58f5cdd8e13?auto=format&fit=crop&w=900&q=80" alt="Fishing guide teaching a family on a Texas lake">
+                <div>
+                    <p>Luke grew up chasing bass on the quiet farm ponds and sprawling reservoirs around Cleveland, Texas. With a rod in hand before he could ride a bike, he learned every creek channel, lily pad line, and sunrise sweet spot across Lake Livingston, Sam Rayburn, and the hidden honey holes in between.</p>
+                    <p>After years of tournaments and weekend trips with friends, Luke realized what he loved most was teaching the craft—watching someone feel the first thump on the line, seeing kids light up when a largemouth breaks the surface, and helping families reconnect outdoors. That spirit launched Luke’s Guide Services.</p>
+                    <p>Today, Luke combines hometown hospitality with dialed-in local expertise. He supplies the clean, comfortable boat, top-notch tackle, and patient coaching so you can relax and reel in the fun. From family values to trophy-chasing techniques, Luke is committed to sharing the joy of Southeast Texas bass fishing with every guest.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="rates" style="background: linear-gradient(135deg, rgba(13,27,42,0.12), rgba(46,83,57,0.12));">
+            <h2 class="section-title">Rates &amp; Packages</h2>
+            <p class="section-intro">Every trip includes a fully rigged bass boat, premium tackle, live bait, life jackets for all ages, chilled drinks, and Luke’s hands-on coaching. Just bring your snacks, sunscreen, and a valid Texas fishing license.</p>
+            <div class="rates-grid">
+                <div class="rate-card">
+                    <h3>Half-Day Trip</h3>
+                    <strong>$325 &middot; 4 Hours</strong>
+                    <p>Ideal for sunrise missions or evening bites. Perfect for families or first-timers looking to experience bass fishing the Luke way.</p>
+                    <p class="included">Includes boat, tackle, bait, electronics, life jackets, and cold drinks.</p>
+                </div>
+                <div class="rate-card">
+                    <h3>Full-Day Trip</h3>
+                    <strong>$525 &middot; 8 Hours</strong>
+                    <p>Maximize your time on Lake Livingston or Sam Rayburn with a full day of patterning bass, exploring hotspots, and dialing in techniques.</p>
+                    <p class="included">Includes boat, tackle, bait, electronics, life jackets, cooler with drinks, and mid-day dock break.</p>
+                </div>
+                <div class="rate-card">
+                    <h3>Family Adventure</h3>
+                    <strong>$450 &middot; Up to 5 Guests</strong>
+                    <p>A relaxed, family-friendly outing focused on fun, education, and plenty of photos. Great for kids and multi-generational trips.</p>
+                    <p class="included">Includes boat, tackle, bait, youth-sized life jackets, bottled drinks, and souvenir catch photos.</p>
+                </div>
+            </div>
+            <p class="section-intro" style="margin-top: 3rem;">Ready to reel in memories? <strong>Book your trip today.</strong></p>
+        </section>
+
+        <section id="gallery">
+            <h2 class="section-title">Photo Gallery</h2>
+            <p class="section-intro">Scroll through sunrise launches, smiling clients, and the Southeast Texas scenery that keeps Luke chasing largemouth bass every season.</p>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1505480055303-2662c0aa89af?auto=format&fit=crop&w=900&q=80" alt="Young angler holding a largemouth bass">
+                    <div class="gallery-caption">First Catch of the Day!</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=900&q=80" alt="Boat at sunrise on a Texas lake">
+                    <div class="gallery-caption">Sunrise Launch on Lake Livingston</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1520880867055-1e30d1cb001c?auto=format&fit=crop&w=900&q=80" alt="Guide helping child catch fish">
+                    <div class="gallery-caption">Smiles for Miles</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1526336024174-e58f5cdd8e13?auto=format&fit=crop&w=900&q=80" alt="Angler reeling in a largemouth bass">
+                    <div class="gallery-caption">8lb Largemouth from Sam Rayburn Lake</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1494420128364-4c5b425f13da?auto=format&fit=crop&w=900&q=80" alt="Group of friends celebrating on boat">
+                    <div class="gallery-caption">Family Fun on the Water</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1489515217757-5fd1be406fef?auto=format&fit=crop&w=900&q=80" alt="Close-up of largemouth bass">
+                    <div class="gallery-caption">Trophy Bass Ready for Release</div>
+                </div>
+            </div>
+            <p class="section-intro" style="margin-top: 2.5rem;">Tap any photo to view it full-size in a lightbox. Hover captions highlight each catch story and the lakes where memories were made.</p>
+        </section>
+
+        <section id="testimonials" style="background: linear-gradient(135deg, rgba(217,203,190,0.6), rgba(13,27,42,0.08));">
+            <h2 class="section-title">Happy Anglers, Real Stories</h2>
+            <div class="testimonials">
+                <div class="testimonial">
+                    <p>“Luke put us right on the fish! My son landed his biggest bass ever within the first hour and Luke never stopped coaching us through every cast. We can’t wait to come back next spring.”</p>
+                    <cite>— Melissa R., Family Trip</cite>
+                </div>
+                <div class="testimonial">
+                    <p>“I’m new to bass fishing and Luke made it so easy. He walked me through the gear, read the lake like a pro, and we finished the day with a cooler full of memories. Five stars!”</p>
+                    <cite>— Aaron T., Beginner Angler</cite>
+                </div>
+                <div class="testimonial">
+                    <p>“From the spotless boat to Luke’s positive attitude, everything was first class. We boated multiple trophy-size fish and my dad still talks about the sunrise on Sam Rayburn.”</p>
+                    <cite>— Daniel H., Father &amp; Son Trip</cite>
+                </div>
+            </div>
+        </section>
+
+        <section id="book">
+            <h2 class="section-title">Reserve Your Spot</h2>
+            <p class="section-intro">Spring and summer dates fill quickly. Choose your trip, lock in your date, and let’s plan the bass fishing adventure you’ve been dreaming about.</p>
+            <div class="booking-form">
+                <form>
+                    <div>
+                        <label for="trip-date">Preferred Date</label>
+                        <input type="date" id="trip-date" name="trip-date">
+                    </div>
+                    <div>
+                        <label for="trip-type">Trip Type</label>
+                        <select id="trip-type" name="trip-type">
+                            <option value="half-day">Half-Day Trip</option>
+                            <option value="full-day">Full-Day Trip</option>
+                            <option value="family">Family Adventure</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="guests">Number of Guests</label>
+                        <select id="guests" name="guests">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="notes">Questions or Notes</label>
+                        <textarea id="notes" name="notes" rows="3" placeholder="Let Luke know how he can make your trip special."></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary">Reserve Your Trip</button>
+                </form>
+                <p style="margin-top: 1.5rem; text-align: center; color: rgba(13,27,42,0.8);">Spots fill up fast during spring and summer—lock in your date today!</p>
+            </div>
+        </section>
+
+        <section id="contact" style="background: linear-gradient(135deg, rgba(13,27,42,0.1), rgba(46,83,57,0.1));">
+            <h2 class="section-title">Get in Touch</h2>
+            <div class="contact-info">
+                <div class="contact-card">
+                    <h3 style="font-family: 'Montserrat', sans-serif; color: var(--green);">Contact Luke</h3>
+                    <p><strong>Phone:</strong> (555) 123-4567</p>
+                    <p><strong>Email:</strong> hello@lukesguideservices.com</p>
+                    <p><strong>Location:</strong> Cleveland, Texas &mdash; serving Lake Livingston, Sam Rayburn, and local ponds.</p>
+                    <p>Let’s get you out on the water!</p>
+                </div>
+                <div class="contact-card" style="padding: 0; overflow: hidden;">
+                    <iframe title="Luke's Guide Services Map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d55234.777332699706!2d-95.16460767784842!3d30.34386693773073!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8647422182279fed%3A0xd73a0b7f3436b3ff!2sCleveland%2C%20TX!5e0!3m2!1sen!2sus!4v1691629312717!5m2!1sen!2sus" width="100%" height="320" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="logo">
+            <img src="assets/images/lukes-guide-logo.svg" alt="Luke's Guide Services silhouette logo">
+            <div>
+                <strong>Luke’s Guide Services</strong>
+                <p style="margin: 0; font-size: 0.9rem;">Rustic roots. Modern bass fishing adventures.</p>
+            </div>
+        </div>
+        <p style="margin: 0;">&copy; <span id="year"></span> Luke’s Guide Services. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
